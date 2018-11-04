@@ -11,6 +11,7 @@ while($inftLoop -lt 1)
 	if($Matches.Matches.Count -lt 1)
 	{
 		Write-Output "Date $pDate Internet Connection not working!! :( "
+		"ERROR $pDate - Error while connecting to Internet" >> C:\Users\Public\Documents\myScript\error.log
 		Start-Sleep -m 500
 		echo "Disabling Wi-Fi"
 		Get-NetAdapter -Name 'Wi-Fi 4' | Disable-NetAdapter -Confirm:$false
