@@ -6,9 +6,9 @@ while($inftLoop -lt 1)
 {
 	ping 8.8.8.8 | Out-File -filepath C:\Users\Public\Documents\myScript\out.txt
 	$FileContent = Get-Content "C:\Users\Public\Documents\myScript\out.txt"
-	$Matches = Select-String -InputObject $FileContent -Pattern "(100% loss)" -AllMatches
+	$Matches = Select-String -InputObject $FileContent -Pattern "Reply from 8.8.8.8" -AllMatches
  	$pDate = Get-Date
-	if($Matches.Matches.Count -eq 1)
+	if($Matches.Matches.Count -lt 1)
 	{
 		Write-Output "Date $pDate Internet Connection not working!! :( "
 		Start-Sleep -m 500
