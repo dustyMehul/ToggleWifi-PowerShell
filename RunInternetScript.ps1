@@ -21,9 +21,11 @@ while($inftLoop -lt 1)
 		Get-NetAdapter -Name 'Wi-Fi 4' | Enable-NetAdapter
 		Start-Sleep -m 500
 		echo "Wi-Fi Enabled"
+		Start-Sleep -s 8
 	}
 	else{
 		Write-Output "Date $pDate Internet Connection working!! :) "
+		Start-Sleep -m 500
 	}
 	$Matches = 0
 }
